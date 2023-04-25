@@ -10,19 +10,30 @@ connection=mysql.connector.connect(
 cursor=connection.cursor()
 
 
-"""Create
+"""
+#Create
 nome_produto="lindt"
 valor=5
 command=f'INSERT INTO vendas (nome_produto, valor) VALUES ("{nome_produto}",{valor})'
 cursor.execute(command)
 connection.commit()
-"""
+
 
 #Read
 get_command= f'SELECT * FROM vendas'
 cursor.execute(get_command)
 result=cursor.fetchall()
 print(result)
+"""
+
+
+#Update
+nome_produto="todynho"
+valor=2
+command=f'UPDATE vendas SET valor = {valor} WHERE nome_produto = "{nome_produto}"'
+cursor.execute(command)
+connection.commit()
+
 
 
 """
