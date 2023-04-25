@@ -24,8 +24,6 @@ get_command= f'SELECT * FROM vendas'
 cursor.execute(get_command)
 result=cursor.fetchall()
 print(result)
-"""
-
 
 #Update
 nome_produto="todynho"
@@ -34,6 +32,13 @@ command=f'UPDATE vendas SET valor = {valor} WHERE nome_produto = "{nome_produto}
 cursor.execute(command)
 connection.commit()
 
+"""
+
+#Delete
+nome_produto="lindt"
+command=f'DELETE FROM vendas WHERE nome_produto="{nome_produto}"'
+cursor.execute(command)
+connection.commit()
 
 
 """
